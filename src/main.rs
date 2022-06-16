@@ -3,11 +3,6 @@
 // If weights are higher then they weigh more in the final calculation
 // X are just input values from whatever image, text etc read from
 
-// Will Sweden qualify for the next Eurocup
-// Arguments: Elanga plays (w = 3), Kulusevski plays (w = 3), Lindelof plays (w = 2)
-
-// #[derive(Serialize, Deserialize)]
-
 use rand::prelude::*;
 
 #[derive(Debug)]
