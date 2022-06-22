@@ -8,56 +8,37 @@
 
 // #[derive(Serialize, Deserialize)]
 
-use rand::prelude::*;
+// Recreate some of the functionalities from tensorflow
 
-#[derive(Debug)]
-struct Perception {
-    x: f32,
-    weight: f32,
-}
+// Tensorflow ideas:
+// Link: https://github.com/aymericdamien/TensorFlow-Examples/blob/master/tensorflow_v2/notebooks/3_NeuralNetworks/neural_network.ipynb
 
-fn init_nn() -> Vec<[Perception; 1]> {
 
-    let mut percep_vec = Vec::new();
+// Todo: Lib for creating layers
+// use lin_reg::print_word;
 
-    for i in 0..11 {
-        let mut rng = rand::thread_rng();
-        let rand_x: f32 = rng.gen();
-        let rand_weight: f32 = rng.gen();
+pub mod lin_reg;
+pub mod ann;
+pub mod listops;
 
-        let percep_struct = [
-            Perception {
-                x: rand_x,
-                weight: rand_weight,
-            }
-        ];
-        percep_vec.push(percep_struct);
-    }
-    
-    percep_vec
-}
-
-fn predict_outcome(data: Vec<[Perception; 1]>) {
-    
-    let mut bias = 2.0;
-
-    for i in data {
-        bias -= i[0].x * i[0].weight;
-    }
-    
-    if bias > 0.0 {
-        println!("True. Bias: {}", bias);
-    }
-    else {
-        println!("False. Bias: {}", bias);
-    }
-
-}
+use crate::lin_reg::*;
+use crate::listops::*;
+use crate::ann::*;
 
 fn main() {
+    let two_dim = 2;
+    let vec_x = vec![1, 3, -5];
+    let vec_y = vec![4, -2, -1];
+    let vec_z = vec![1, 2, 3, 4];
 
 
+    // Different functions: 
+    println!("Basic Neural network prediction: ", );
     predict_outcome(init_nn());
-    
+    println!("\n Dot product: {}", calc_dot_product(&vec_x, &vec_y));
+
+    let matrix = init_matrix(&two_dim);
+    println!("2D matrix: {:?}", matrix);
+    println!("Matrix, converted to 1 dimensional list {:?}", reshape_to_list(matrix));
 
 }
