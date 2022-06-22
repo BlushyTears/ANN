@@ -4,7 +4,7 @@
 // Beyond amazing reference: https://github.com/henryfo/polyfit
 // https://medium.com/analytics-vidhya/linear-regression-machine-learning-ef8b8899922a
   
-
+// C code
 // static matrix_t *createMatrix( int rows, int cols )
 // {
 //     matrix_t *rVal = (matrix_t *) calloc(1, sizeof(matrix_t));

@@ -39,7 +39,7 @@ pub fn reshape_to_list(vec_2d: Vec<[lin_reg::Vec2d; 1]>) -> Vec<i32> {
 }
 
 // Splits a Vector between index x and y
-pub fn split_list(arr: Vec<i32>, x: usize, y: usize) -> Vec<i32> {
+pub fn split_list(arr: &Vec<i32>, x: usize, y: usize) -> Vec<i32> {
 
     let mut new_arr: Vec<i32> = Vec::new();
 

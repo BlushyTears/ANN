@@ -7,6 +7,11 @@ pub struct Perception {
     weight: f32,
 }
 
+
+// Check if x1*w1 + x2*w2 + x3*w3 - b > 0 and return as boolean 
+// If weights are higher then they weigh more in the final calculation
+// X are just input values from whatever image, text etc read from
+
 // Executes a random prediction with no substance
 pub fn predict_outcome(data: Vec<[Perception; 1]>) {
     

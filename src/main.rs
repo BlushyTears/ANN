@@ -1,11 +1,3 @@
-
-// Check if x1*w1 + x2*w2 + x3*w3 - b > 0 and return as boolean 
-// If weights are higher then they weigh more in the final calculation
-// X are just input values from whatever image, text etc read from
-
-// Will Sweden qualify for the next Eurocup
-// Arguments: Elanga plays (w = 3), Kulusevski plays (w = 3), Lindelof plays (w = 2)
-
 // #[derive(Serialize, Deserialize)]
 
 // Recreate some of the functionalities from tensorflow
@@ -40,5 +32,7 @@ fn main() {
     let matrix = init_matrix(&two_dim);
     println!("2D matrix: {:?}", matrix);
     println!("Matrix, converted to 1 dimensional list {:?}", reshape_to_list(matrix));
+
+    println!("List Vec_z: {:?} split into {:?}", vec_z, split_list(&vec_z, 1, 3));
 
 }
